@@ -2,9 +2,9 @@
 
 Used Technologies:
 ```
-Angular 1 </br>
-SASS (SCSS) </br>
-Gulp for automatic sass compiling and hot reloading for CSS, JS and HTML </br>
+Angular 1,
+SASS (SCSS),
+Gulp for automatic sass compiling and hot reloading for CSS, JS and HTML
 ```
 
 To run, just Gulp Watch
