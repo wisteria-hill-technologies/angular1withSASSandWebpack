@@ -1,0 +1,22 @@
+{
+  "name": "angular1website",
+  "version": "1.0.0",
+  "description": "Website with Angular1 and sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Noby Fujioka",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-animate": "^1.5.9",
+    "angular-ui-router": "^0.3.2",
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}

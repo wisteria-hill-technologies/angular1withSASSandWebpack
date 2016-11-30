@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular1Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/angular/angular.min.js"></script>
+    <script src="../../node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="../../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../js/angularApp.js"></script>
+  </head>
+  <body>
+    <div ng-controller="mainCtrl as mCtrl">
+      <h1>{{ mCtrl.message }}</h1>
+    </div>
+  </body>
+</html>
