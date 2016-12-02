@@ -1,7 +1,42 @@
+// variable
+$color: brown;
+$genericBtnColor: green;
+$letterColor: white;
+
 .testing {
   width: percentage(5/7);
 }
 
 body {
-  background: green;
+  background: $color;
+}
+
+h1 {
+  background-color: yellow;
+  hello: {
+    color: red;
+  }
+}
+
+button {
+  background: $genericBtnColor;
+  color: $letterColor;
+}
+
+.special{
+  @extend button;
+  color:purple;
+}
+
+.box {
+  width:150px;
+  height:130px;
+  border: 1px black solid;
+  background-color:white;
+}
+
+.box2 {
+  @extend .box;
+  border: 2px blue;
+  margin: 10px;
 }

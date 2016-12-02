@@ -2,4 +2,25 @@
   width: 71.42857%; }
 
 body {
-  background: green; }
+  background: brown; }
+
+h1 {
+  background-color: yellow;
+  hello-color: red; }
+
+button, .special {
+  background: green;
+  color: white; }
+
+.special {
+  color: purple; }
+
+.box, .box2 {
+  width: 150px;
+  height: 130px;
+  border: 1px black solid;
+  background-color: white; }
+
+.box2 {
+  border: 2px blue;
+  margin: 10px; }
