@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+var sassdoc = require('sassdoc');
 
 var browserSync = require('browser-sync').create();
 
@@ -9,6 +10,7 @@ var sassOptions = {
   errLogToConsole: true,
   outputStyle: 'expanded'
 };
+//for production, change outputStyle to 'compressed' for minified css.
 
 gulp.task('sass', function(){
   return gulp
@@ -18,6 +20,7 @@ gulp.task('sass', function(){
     .pipe(sourcemaps.write())
     .pipe(autoprefixer())
     .pipe(gulp.dest('app/css'))
+    .pipe(sassdoc())
     .pipe(browserSync.reload({
       stream: true
     }));

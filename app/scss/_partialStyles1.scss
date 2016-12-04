@@ -1,0 +1,26 @@
+
+p{
+  font-size:2em;
+  a{
+    color:blue;
+
+    &:hover{
+      color: red;
+    }
+  }
+}
+
+h3 {
+  font-size: 4em;
+  &.info {
+    color: red;
+  }
+}
+
+// h3 {
+//   font-size: 4em;
+//   .info {
+//     font-size: 20px;
+//     color: red;
+//   }
+// }

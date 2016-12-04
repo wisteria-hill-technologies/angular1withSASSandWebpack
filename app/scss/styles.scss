@@ -1,6 +1,8 @@
+@import "partialStyles1";
+
 // variable
-$color: brown;
-$genericBtnColor: green;
+$color: lightblue;
+$genericBtnColor: lightgreen;
 $letterColor: white;
 
 .testing {
@@ -12,9 +14,9 @@ body {
 }
 
 h1 {
-  background-color: yellow;
-  hello: {
-    color: red;
+  background-color: purple;
+  &.hello {
+    color: white;
   }
 }
 
@@ -28,27 +30,47 @@ button {
   color:purple;
 }
 
-.box {
-  width:150px;
-  height:130px;
-  border: 1px black solid;
-  background-color:white;
+@mixin circle($diameter: 100px, $radius: 100px, $color: yellow) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: $radius;
+  border-color: gray;
+  background-color: $color;
 }
-
-.box2 {
-  @extend .box;
-  border: 2px blue;
+.circle1 {
+  @include circle(200px, 200px, orange);
+  margin: 10px;
+}
+.circle2 {
+  @include circle;
   margin: 10px;
 }
 
-div {
+%box {
+  width:150px;
+  height:130px;
+  border: 1px black solid;
+}
+
+.box1 {
+  @extend %box;
+  background-color: green;
+  margin:5px;
+}
+.box2 {
+  @extend %box;
+  background-color: $color;
+  margin: 10px;
+}
+
+
+.circle {
     width: 100px;
     height: 100px;
     background: red;
     transition: width 2s, height 4s;
-}
-
-div:hover {
-    width: 300px;
-    height: 300px;
+    &:hover {
+        width: 300px;
+        height: 300px;
+    }
 }
