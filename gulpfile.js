@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var customizeBootstrap = require('gulp-customize-bootstrap');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
@@ -26,9 +27,17 @@ gulp.task('sass', function(){
     }));
 });
 
+// gulp.task('compileBootstrap', function() {
+//   return gulp.src('node_modules/bootstrap/scss/bootstrap.scss')
+//     .pipe(customizeBootstrap('app/scss/*.scss'))
+//     .pipe(sass())
+//     .pipe(gulp.dest('app/css'));
+// });
+
+
 gulp.task('watch', ['browserSync', 'sass'], function(){
   gulp.watch('app/scss/**/*.scss',['sass']);
-  gulp.watch('app/*.html', browserSync.reload);
+  gulp.watch('app/**/*.html', browserSync.reload);
   gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 

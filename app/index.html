@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Angular1Website</title>
+    <link href="../css/reset.css" rel="stylesheet">
     <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="../css/styles.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -20,8 +20,16 @@
 
   </head>
   <body>
-    <main ui-view></main>
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Angular1 Website</a>
 
+      </div>
+    </nav>
+
+    <div class="container">
+      <main ui-view></main>
+    </div>
 
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
