@@ -6,11 +6,12 @@ app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('home', {
       url:'/',
-      template: '<h1>Home</h1>'
+      templateUrl: 'static/home.html',
+      controller: 'mainCtrl as mCtrl'
     })
     .state('about', {
       url:'/about',
-      template: '<h1>About</h1>'
+      templateUrl: 'static/about.html'
     });
 
 });
