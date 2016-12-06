@@ -4,6 +4,7 @@ Used Technologies:
 ```
 Angular 1,
 SASS (SCSS),
+Bootstrap,
 Gulp for automatic sass compiling and hot reloading for CSS, JS and HTML
 ```
 
