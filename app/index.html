@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Angular1Website</title>
+    <title>Noby's NG1 Stack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/reset.css" rel="stylesheet">
     <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 
+    <script src="https://use.fontawesome.com/eb29cf452d.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -18,9 +21,8 @@
     <![endif]-->
 
 
-  </head>
-  <body>
-    <nav class="navbar navbar-default">
+  <body ng-controller="mainCtrl" ng-class="parent.addClass">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -30,12 +32,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Angular1 Website<span class="sr-only">(current)</span></a>
+          <a class="navbar-brand" href="#/landing"><i class="fa fa-shield" aria-hidden="true"></i> Noby's NG1 Stack<span class="sr-only">(current)</span></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
+            <li ><a href="#/home">Home</a></li>
+            <li ><a href="#/image-gallery">Image Gallery</a></li>
             <li ><a href="#/about">About</a></li>
             <li ><a href="#/contact">Contact</a></li>
               <ul class="dropdown-menu">
@@ -56,6 +60,9 @@
     <div class="container">
       <main ui-view></main>
     </div>
+
+
+
 
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
