@@ -27,12 +27,6 @@ gulp.task('sass', function(){
     }));
 });
 
-// gulp.task('compileBootstrap', function() {
-//   return gulp.src('node_modules/bootstrap/scss/bootstrap.scss')
-//     .pipe(customizeBootstrap('app/scss/*.scss'))
-//     .pipe(sass())
-//     .pipe(gulp.dest('app/css'));
-// });
 
 
 gulp.task('watch', ['browserSync', 'sass'], function(){

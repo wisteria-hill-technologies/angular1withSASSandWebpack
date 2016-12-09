@@ -1,31 +1,13 @@
-<div class="jumbotron jumbotron-grass">
+<div class="jumbotron jumbotron-grass" ng-cloak>
 <h1>About us</h1>
 </div>
 <div class="row">
   <div class="col-md-2 col-sm-12 sideBar">
-      <div class="sideBarItem">
-        Our story
-      </div>
-      <div class="sideBarItem">
-        Our place
-      </div>
-      <div class="sideBarItem">
-        Our friends
-      </div>
-      <div class="sideBarItem">
-        Our expertise
-      </div>
-      <div class="sideBarItem">
-        Our actions
-      </div>
-      <div class="sideBarItem">
-        Our actions
-      </div>
-      <div class="sideBarItem">
-        Our actions
-      </div>
+      <a ng-repeat="link in aCtrl.list" href="#about/{{link.itemUrl}}" class="sideBarItem"> {{ link.itemTitle }}</a>
+
   </div>
   <div class="col-md-10 col-sm-12">
-    hippie disclosure edible gardens PLCA rising sea levels Limits To Growth animals GHGE small island states World Summit on Sustainable Development aquaculture AccountAbility1000 ecosystem Johannesburg externality Gaia volunteering EMAS ecovillage women EFQM the animals save the planet GPP carsharing The Commons trust Rio codex GIY (grow it yourself) culture complexity WBCSD certificate organic Civil Society slow wine carbon trading worldchanging Bellagio Principles youth carrying capacity treehugger justice lifestyles closed loop locavore leadership coherence SRI conservation Natural Step precautionary principle The BioDaVersity Code opensource Green Belt Movement carpools agroforestry sustainable development fresh Caux Round Table Principles for Business foodsystem green angels thinktank integrity Ethical Trading Initiative interdependence Downshifters human rights The Amazon organism urban agriculture mindful people meaningful work SPP mirror, mirror on the wall, who’s the greenest of them all?
+    <h1>{{aCtrl.section.itemTitle}}</h1>
+    <p>{{ aCtrl.section.itemContent }}</p>
   </div>
 </div>

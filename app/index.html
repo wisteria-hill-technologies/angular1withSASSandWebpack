@@ -21,7 +21,7 @@
     <![endif]-->
 
 
-  <body ng-controller="mainCtrl" ng-class="parent.addClass">
+  <body ng-controller="mainCtrl" ng-class="parent.addClass" ng-cloak>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -59,6 +59,7 @@
 
     <div class="container">
       <main ui-view></main>
+      {{scrollTo}}
     </div>
 
 
