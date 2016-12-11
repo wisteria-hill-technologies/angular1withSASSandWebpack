@@ -128,8 +128,14 @@ hr {
   margin: 1px 10px;
   padding: 5px;
   display: inline-block;
+  &:link{
+    text-decoration: none;
+  }
   &:hover {
     background-color: rgba(41, 248, 102, 0.72);
+  }
+  &:focus {
+    background-color: yellow;
   }
 }
 

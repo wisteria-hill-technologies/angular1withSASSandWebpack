@@ -1,11 +1,10 @@
 <div class="jumbotron jumbotron-walk2" ng-cloak>
-  <h1>Noby's NG1 Stack</h1>
-  <p>Website made with Angular 1, Bootstrap, and SASS!</p>
+  <h1>{{ hCtrl.page.pageTitle }}</h1>
+  <p>{{ hCtrl.page.pageStrapline }}</p>
 </div>
-
 <div class="row">
   <div class="col-md-2 col-sm-12 sideBar">
-    <a ng-repeat="link in hCtrl.sections" href="#home/{{link.itemUrl}}" class="sideBarItem"> {{ link.itemTitle }}</a>
+    <a ng-repeat="link in hCtrl.page.pageSections" href="#home/{{link.itemUrl}}" class="sideBarItem"> {{ link.itemTitle }}</a>
 
   </div>
   <div class="col-md-10 col-sm-12">
@@ -13,15 +12,9 @@
     <p>{{ hCtrl.section.itemContent }}</p>
   </div>
 </div>
-<!-- <div class="row">
-  <div ng-repeat="item in homeCtrl.list" class="col-md-4 col-sm-6 pink">
-    {{ item.name }} - {{ item.number }}
-  </div>
-</div>
-<h1 class="hello">{{ homeCtrl.message }}</h1>
 
 
-<button class="btn btn-primary btn-sm">Button 1</button>
+<!-- <button class="btn btn-primary btn-sm">Button 1</button>
 <button class="btn btn-primary btn-sm active">Button 1.2</button>
 <button class="btn btn-danger btn-sm" disabled="disabled">Button 1.3</button>
 <button class="btn btn-warning ">Button 2</button>

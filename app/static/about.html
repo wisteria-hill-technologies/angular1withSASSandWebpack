@@ -1,9 +1,10 @@
 <div class="jumbotron jumbotron-grass" ng-cloak>
-<h1>About us</h1>
+  <h1>{{ aCtrl.page.pageTitle }}</h1>
+  <p>{{ aCtrl.page.pageStrapline }}</p>
 </div>
 <div class="row">
   <div class="col-md-2 col-sm-12 sideBar">
-      <a ng-repeat="link in aCtrl.sections" href="#about/{{link.itemUrl}}" class="sideBarItem"> {{ link.itemTitle }}</a>
+    <a ng-repeat="link in aCtrl.page.pageSections" href="#about/{{link.itemUrl}}" class="sideBarItem"> {{ link.itemTitle }}</a>
 
   </div>
   <div class="col-md-10 col-sm-12">
