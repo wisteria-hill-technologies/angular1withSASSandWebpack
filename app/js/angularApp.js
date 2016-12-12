@@ -84,6 +84,7 @@ app.factory('pages', function(){
     }
     var page = o.getPage(pageEntered);
     var section = page.pageSections.filter(findByStateParam);
+    console.log();
     return section[0];
   };
 
@@ -100,10 +101,11 @@ app.controller('landingCtrl', function($scope){
   $scope.parent.addClass = "landingBackground";
 });
 
-app.controller('homeCtrl', ['$scope', '$state', '$stateParams','pages', function($scope, $state, $stateParams, pages){
+app.controller('homeCtrl', ['$scope', '$state', '$stateParams','pages', '$location', function($scope, $state, $stateParams, pages, $location){
   var self = this;
   $scope.parent.addClass = "";
   self.page = pages.getPage($state.current.name);
+  console.log('$scope.parent: ', $scope.parent);
   self.section = pages.getSection($state.current.name, $stateParams.itemUrl);
 }]);
 

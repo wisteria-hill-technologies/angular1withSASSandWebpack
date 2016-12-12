@@ -4,7 +4,7 @@
 </div>
 <div class="row">
   <div class="col-md-2 col-sm-12 sideBar">
-    <a ng-repeat="link in hCtrl.page.pageSections" href="#home/{{link.itemUrl}}" class="sideBarItem"> {{ link.itemTitle }}</a>
+    <a id="{{link.itemUrl}}" ng-repeat="link in hCtrl.page.pageSections" href="#home/{{link.itemUrl}}" class="sideBarItem" ng-class="{'active':link.itemUrl === hCtrl.section.itemUrl}"> {{ link.itemTitle }}</a>
 
   </div>
   <div class="col-md-10 col-sm-12">

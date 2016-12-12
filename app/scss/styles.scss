@@ -1,8 +1,9 @@
 @import "bootstrap-mod";
 
 //variables
-$mainColor: #FFFF;
+$mainColor: rgb(32, 31, 31);
 
+// General styling
 html {
   height: 100%;
 }
@@ -16,6 +17,7 @@ body {
 @media (max-width: 767px) {
   body {
     padding-top: 10px;
+    padding-bottom: 70px;
   }
   .navbar-fixed-top{
     bottom: 0;
@@ -29,12 +31,6 @@ body {
   body {
     padding-top: 70px;
   }
-  // .navbar-fixed-top{
-  //   bottom: 0;
-  //   top:initial;
-  //   margin-bottom: 0;
-  //   border-width: 1px 0 0;
-  // }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -49,35 +45,38 @@ body {
   }
 }
 
-
-
+//Styling for headline on landing page and jumbotrons
 %headline {
   text-align: center;
   h1, h2, h3, p {
-
     text-shadow: 0px 0px 10px black,
                  0px 0px 250px #4CAF50;
     color: white;
   }
 }
 
-.landingContent {
-  @extend %headline;
-  padding-top: 20%;
-}
-
-hr {
-  width: 800px;
-  border-top: 1px solid blue;
-  border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-
-.landingBackground {
-  background-image: url("../images/walk2.jpg");
+// Positioning,etc. for background image
+%backgroundImage {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+//Styling for landing page.
+.landingContent {
+  @extend %headline;
+  padding-top: 20%;
+  hr {
+    width: 800px;
+    border-top: 1px solid rgb(176, 236, 201);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+}
+
+.landingBackground {
+  background-image: url("../images/walk2.jpg");
+  @extend %backgroundImage;
   h1 {
     color: white;
   }
@@ -85,60 +84,60 @@ hr {
 
 .jumbotron-home {
   background-image: url("../images/light.jpg");
-  background-position: center;
-  background-size: cover;
+  @extend %backgroundImage;
   @extend %headline;
 }
 
 .jumbotron-grass {
   background-image: url("../images/grass.jpg");
-  background-position: center;
-  background-size: cover;
+  @extend %backgroundImage;
   @extend %headline;
 }
 
 .jumbotron-walk {
   background-image: url("../images/walk.jpg");
-  background-position: center;
-  background-size: cover;
+  @extend %backgroundImage;
   @extend %headline;
 }
 
 .jumbotron-contact {
   background-image: url("../images/contact.jpg");
-  background-position: center;
-  background-size: cover;
+  @extend %backgroundImage;
   @extend %headline;
 }
 
 .jumbotron-walk2 {
   background-image: url("../images/walk2.jpg");
-  background-position: center;
-  background-size: cover;
+  @extend %backgroundImage;
   @extend %headline;
 }
 
 .sideBar{
   margin-bottom: 20px;
 }
+
 .sideBarItem {
   height: 30px;
   width: 115px;
   background-color: rgba(184, 226, 226, 0.58);
-  margin: 1px 10px;
+  margin: 1px 10px 5px 10px;
   padding: 5px;
   display: inline-block;
+  border-radius: 5px;
   &:link{
     text-decoration: none;
   }
   &:hover {
-    background-color: rgba(41, 248, 102, 0.72);
+    background-color: yellow;
   }
   &:focus {
-    background-color: yellow;
+    background-color: rgba(136, 246, 8, 0.73);
   }
 }
 
+.active {
+  background: rgba(136, 246, 8, 0.73);
+}
 
 // // variable
 // $color: lightblue;
