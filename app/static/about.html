@@ -1,14 +1,14 @@
 <div class="jumbotron jumbotron-grass" ng-cloak>
-  <h1>{{ aCtrl.page.pageTitle }}</h1>
-  <p>{{ aCtrl.page.pageStrapline }}</p>
+  <h1>{{ page.pageTitle }}</h1>
+  <p>{{ page.pageStrapline }}</p>
 </div>
 <div class="row">
   <div class="col-md-2 col-sm-12 sideBar">
-    <a ng-repeat="link in aCtrl.page.pageSections" href="#about/{{link.itemUrl}}" class="sideBarItem" ng-class="{'active':link.itemUrl === aCtrl.section.itemUrl}"> {{ link.itemTitle }}</a>
+    <a ng-repeat="link in page.pageSections" href="#{{page.pageUrl }}/{{link.itemUrl}}" class="sideBarItem" ng-class="{'active':link.itemUrl === section.itemUrl}"> {{ link.itemTitle }}</a>
 
   </div>
   <div class="col-md-10 col-sm-12">
-    <h1>{{aCtrl.section.itemTitle}}</h1>
-    <p>{{ aCtrl.section.itemContent }}</p>
+    <h1>{{section.itemTitle}}</h1>
+    <p>{{ section.itemContent }}</p>
   </div>
 </div>

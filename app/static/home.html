@@ -1,15 +1,15 @@
 <div class="jumbotron jumbotron-walk2" ng-cloak>
-  <h1>{{ hCtrl.page.pageTitle }}</h1>
-  <p>{{ hCtrl.page.pageStrapline }}</p>
+  <h1>{{ page.pageTitle }}</h1>
+  <p>{{ page.pageStrapline }}</p>
 </div>
 <div class="row">
   <div class="col-md-2 col-sm-12 sideBar">
-    <a id="{{link.itemUrl}}" ng-repeat="link in hCtrl.page.pageSections" href="#home/{{link.itemUrl}}" class="sideBarItem" ng-class="{'active':link.itemUrl === hCtrl.section.itemUrl}"> {{ link.itemTitle }}</a>
+    <a id="{{link.itemUrl}}" ng-repeat="link in page.pageSections" href="#{{ page.pageUrl }}/{{link.itemUrl}}" class="sideBarItem" ng-class="{'active':link.itemUrl === section.itemUrl}"> {{ link.itemTitle }}</a>
 
   </div>
   <div class="col-md-10 col-sm-12">
-    <h1>{{hCtrl.section.itemTitle}}</h1>
-    <p>{{ hCtrl.section.itemContent }}</p>
+    <h1>{{ section.itemTitle }}</h1>
+    <p>{{ section.itemContent }}</p>
   </div>
 </div>
 

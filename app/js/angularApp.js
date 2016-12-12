@@ -117,16 +117,15 @@ app.controller('landingCtrl', function($scope){
 app.controller('homeCtrl', ['$scope', '$state', '$stateParams','pages', '$location', function($scope, $state, $stateParams, pages, $location){
   var self = this;
   $scope.parent.addClass = "";
-  self.page = pages.getPage($state.current.name);
-  console.log('$scope.parent: ', $scope.parent);
-  self.section = pages.getSection($state.current.name, $stateParams.itemUrl);
+  $scope.page = pages.getPage($state.current.name);
+  $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
 }]);
 
 app.controller('aboutCtrl', ['$scope', '$state', '$stateParams','pages', function($scope, $state, $stateParams, pages){
   var self = this;
   $scope.parent.addClass = "";
-  self.page = pages.getPage($state.current.name);
-  self.section = pages.getSection($state.current.name, $stateParams.itemUrl);
+  $scope.page = pages.getPage($state.current.name);
+  $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
 }]);
 
 app.controller('imageGalleryCtrl', ['$scope', 'images', function($scope, images){
