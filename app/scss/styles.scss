@@ -59,8 +59,6 @@ body {
 %backgroundImage {
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
 }
 
 //Styling for landing page.
@@ -77,6 +75,8 @@ body {
 .landingBackground {
   background-image: url("../images/walk2.jpg");
   @extend %backgroundImage;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   h1 {
     color: white;
   }

@@ -1,38 +1,13 @@
+
 <div class="jumbotron jumbotron-grass" ng-cloak>
   <h1><span class="glyphicon glyphicon-picture"></span> The Image Gallery</h1>
   <p>A list of images from our daily life</p>
 </div>
-
 <div class="row" ng-cloak>
-  <div class="col-lg-4 col-sm-6">
+  <div ng-repeat="imgItem in igCtrl.imgList" class="col-lg-4 col-sm-6">
     <div class="thumbnail">
-      <img src="../images/mathsbuild.JPG" alt="">
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6">
-    <div class="thumbnail">
-      <img src="../images/atgarden.JPG" alt="">
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6">
-    <div class="thumbnail">
-      <img src="../images/atgarden.JPG" alt="">
-    </div>
-  </div>
-
-  <div class="col-lg-4 col-sm-6">
-    <div class="thumbnail">
-      <img src="../images/cat.JPG" alt="">
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6">
-    <div class="thumbnail">
-      <img src="../images/grass.JPG" alt="">
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6">
-    <div class="thumbnail">
-      <img src="../images/light.JPG" alt="">
+      <img ng-src="{{ imgItem.img }}" alt="">
+      <p class="text-center">{{ imgItem.imgDesc }}</p>
     </div>
   </div>
 

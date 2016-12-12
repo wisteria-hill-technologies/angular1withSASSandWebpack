@@ -32,6 +32,19 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 });
 
+app.factory('images', function(){
+  var o = {};
+  o.list = [
+    {imgDesc:'At Garden', img: '../images/cat.jpg' },
+    {imgDesc:'Cat', img: '../images/cat.jpg' },
+    {imgDesc:'Light', img: '../images/cat.jpg' },
+    {imgDesc:'Maths build', img: '../images/cat.jpg' },
+    {imgDesc:"Let's contact", img: '../images/cat.jpg' },
+    {imgDesc:'Walk', img: '../images/cat.jpg' }
+  ];
+  return o;
+});
+
 app.factory('pages', function(){
   var o = {};
 
@@ -116,10 +129,24 @@ app.controller('aboutCtrl', ['$scope', '$state', '$stateParams','pages', functio
   self.section = pages.getSection($state.current.name, $stateParams.itemUrl);
 }]);
 
-app.controller('imageGalleryCtrl', function($scope){
+app.controller('imageGalleryCtrl', ['$scope', 'images', function($scope, images){
   var self = this;
   $scope.parent.addClass = "";
-});
+
+  self.imgList = images.list;
+  // $scope.loading = true;
+  // $scope.startSpin = function(){
+  //       usSpinnerService.spin('spinner-1');
+  // };
+  // $scope.stopSpin = function(){
+  //     usSpinnerService.stop('spinner-1');
+  // };
+  // $scope.startSpin();
+  // $scope.$on('$viewContentLoaded', function(){
+  // //view content is fully loaded !!
+  //   $scope.loading = false;
+  // });
+}]);
 
 app.controller('contactCtrl', function($scope){
   var self = this;
