@@ -11,13 +11,13 @@ app.config(function($stateProvider, $urlRouterProvider){
     })
     .state('home', {
       url:'/home/:itemUrl',
-      templateUrl: 'static/home.html',
-      controller: 'homeCtrl as hCtrl'
+      templateUrl: 'static/pages.html',
+      controller: 'pageCtrl as pCtrl'
     })
     .state('about', {
       url:'/about/:itemUrl',
-      templateUrl: 'static/about.html',
-      controller: 'aboutCtrl as aCtrl'
+      templateUrl: 'static/pages.html',
+      controller: 'pageCtrl as pCtrl'
     })
     .state('image-gallery', {
       url:'/image-gallery',
@@ -32,24 +32,12 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 });
 
-app.factory('images', function(){
-  var o = {};
-  o.list = [
-    {imgDesc:'At Garden', img: '../images/cat.jpg' },
-    {imgDesc:'Cat', img: '../images/cat.jpg' },
-    {imgDesc:'Light', img: '../images/cat.jpg' },
-    {imgDesc:'Maths build', img: '../images/cat.jpg' },
-    {imgDesc:"Let's contact", img: '../images/cat.jpg' },
-    {imgDesc:'Walk', img: '../images/cat.jpg' }
-  ];
-  return o;
-});
-
 app.factory('pages', function(){
   var o = {};
 
   o.list = [
     {pageUrl:"home",
+     pageJumbotron: "walk2",
      pageTitle: "Noby's NG1 Stack",
      pageStrapline: "Website made with Angular 1, Bootstrap, and SASS!",
      pageSections:[
@@ -65,6 +53,7 @@ app.factory('pages', function(){
       ]
     },
     {pageUrl:"about",
+     pageJumbotron: "grass",
      pageTitle: "About us",
      pageStrapline: "",
      pageSections:[
@@ -78,7 +67,29 @@ app.factory('pages', function(){
       {itemUrl:"invention", itemTitle:"Our invention", itemContent:"content 7 abcd"},
       {itemUrl:"goals", itemTitle:"Our goals",itemContent:"content 8 abcd"}
       ]
-    }
+    },
+    {pageUrl:"contact",
+     pageJumbotron: "contact",
+     pageTitle: "Contact us",
+     pageStrapline: "",
+     pageParagraph: "biomimicry Al Gore rebound effect Our Common Future less aesthetics more ethics FSC anthropocene SIGMA Guidelines land-grabbing CSR activism LOVOS artisan WRAP biodiversity C2C bicycle Is Beautiful coral reef slow baking zero waste freegan long-term fair solidarity re-examine Gross Domestic Happiness footprint taste-the-waste foodcoops transparency scenarios ecosystem services liftclub time.",
+     pageSections:[]
+   },
+   {pageUrl:"image-gallery",
+    pageJumbotron: "grass",
+    pageTitle: "Image Gallery",
+    pageIconClass: "glyphicon glyphicon-picture",
+    pageStrapline: "",
+    pageSections:[],
+    galleryImages:[
+      {imgDesc:'At Garden', img: '../images/cat.jpg' },
+      {imgDesc:'Cat', img: '../images/cat.jpg' },
+      {imgDesc:'Light', img: '../images/cat.jpg' },
+      {imgDesc:'Maths build', img: '../images/cat.jpg' },
+      {imgDesc:"Let's contact", img: '../images/cat.jpg' },
+      {imgDesc:'Walk', img: '../images/cat.jpg' }
+    ]
+   }
   ];
 
   o.getPage = function(pageEntered){
@@ -114,25 +125,26 @@ app.controller('landingCtrl', function($scope){
   $scope.parent.addClass = "landingBackground";
 });
 
-app.controller('homeCtrl', ['$scope', '$state', '$stateParams','pages', '$location', function($scope, $state, $stateParams, pages, $location){
+app.controller('pageCtrl', ['$scope', '$state', '$stateParams', 'pages', function($scope, $state, $stateParams, pages){
   var self = this;
   $scope.parent.addClass = "";
   $scope.page = pages.getPage($state.current.name);
   $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
 }]);
 
-app.controller('aboutCtrl', ['$scope', '$state', '$stateParams','pages', function($scope, $state, $stateParams, pages){
+// app.controller('aboutCtrl', ['$scope', '$state', '$stateParams','pages', function($scope, $state, $stateParams, pages){
+//   var self = this;
+//   $scope.parent.addClass = "";
+//   $scope.page = pages.getPage($state.current.name);
+//   $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
+// }]);
+
+app.controller('imageGalleryCtrl', ['$scope', '$state', '$stateParams', 'pages', function($scope, $state, $stateParams, pages){
   var self = this;
   $scope.parent.addClass = "";
   $scope.page = pages.getPage($state.current.name);
   $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
-}]);
-
-app.controller('imageGalleryCtrl', ['$scope', 'images', function($scope, images){
-  var self = this;
-  $scope.parent.addClass = "";
-
-  self.imgList = images.list;
+  $scope.imgList = $scope.page.galleryImages;
   // $scope.loading = true;
   // $scope.startSpin = function(){
   //       usSpinnerService.spin('spinner-1');
@@ -147,7 +159,10 @@ app.controller('imageGalleryCtrl', ['$scope', 'images', function($scope, images)
   // });
 }]);
 
-app.controller('contactCtrl', function($scope){
+app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', function($scope, $state, $stateParams, pages){
   var self = this;
   $scope.parent.addClass = "";
-});
+  $scope.page = pages.getPage($state.current.name);
+  $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
+
+}]);
