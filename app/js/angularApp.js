@@ -1,6 +1,8 @@
 var app = angular.module('myApp',['ngAnimate', 'ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider){
+app.config(function($stateProvider, $urlRouterProvider, $compileProvider){
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data|chrome-extension):/);
+
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
@@ -156,9 +158,36 @@ app.controller('imageGalleryCtrl', ['$scope', '$state', '$stateParams', 'pages',
   // });
 }]);
 
-app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', function($scope, $state, $stateParams, pages){
+app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$http', function($scope, $state, $stateParams, pages, $http){
   $scope.parent.addClass = "";
   $scope.page = pages.getPage($state.current.name);
   $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
+
+  $scope.submit = function(formData){
+    // mailer.send_emailFrom($scope.name, $scope.email, $scope.subject, $scope.message);
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://learningofthefuture.net/contact-form.php",
+      "method": "GET",
+      "headers": {
+        "content-type": "application/x-www-form-urlencoded",
+        "cache-control": "no-cache",
+        "postman-token": "624f5723-eea0-12d9-c634-8eb2da8b4582"
+      },
+      "data": {
+        "name": $scope.name,
+        "email": $scope.email,
+        "subject": $scope.subject,
+        "message": $scope.message
+      }
+    };
+
+    $http(settings).success(function(data){
+      console.log("data: ", data);
+    });
+
+  };
+
 
 }]);
