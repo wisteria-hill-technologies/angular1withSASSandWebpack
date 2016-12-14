@@ -121,12 +121,10 @@ app.controller('mainCtrl', function($scope){
 });
 
 app.controller('landingCtrl', function($scope){
-  var self = this;
   $scope.parent.addClass = "landingBackground";
 });
 
 app.controller('pageCtrl', ['$scope', '$state', '$stateParams', 'pages', function($scope, $state, $stateParams, pages){
-  var self = this;
   $scope.parent.addClass = "";
   $scope.page = pages.getPage($state.current.name);
   $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
@@ -140,7 +138,6 @@ app.controller('pageCtrl', ['$scope', '$state', '$stateParams', 'pages', functio
 // }]);
 
 app.controller('imageGalleryCtrl', ['$scope', '$state', '$stateParams', 'pages', function($scope, $state, $stateParams, pages){
-  var self = this;
   $scope.parent.addClass = "";
   $scope.page = pages.getPage($state.current.name);
   $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
@@ -160,7 +157,6 @@ app.controller('imageGalleryCtrl', ['$scope', '$state', '$stateParams', 'pages',
 }]);
 
 app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', function($scope, $state, $stateParams, pages){
-  var self = this;
   $scope.parent.addClass = "";
   $scope.page = pages.getPage($state.current.name);
   $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);

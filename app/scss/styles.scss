@@ -139,6 +139,20 @@ body {
   background: rgba(136, 246, 8, 0.73);
 }
 
+.fadeIn {
+  animation: fadeIn 0.5s both ease-in;
+  z-index: 8888;
+}
+
+/* animations --------------------------------------- */
+/* fade In */
+@keyframes fadeIn {
+    from    {
+      opacity: 0;
+    }
+}
+
+
 // // variable
 // $color: lightblue;
 // $genericBtnColor: lightgreen;
