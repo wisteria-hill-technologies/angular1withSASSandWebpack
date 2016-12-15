@@ -1,6 +1,7 @@
 var app = angular.module('myApp',['ngAnimate', 'ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider, $compileProvider){
+app.config(function($stateProvider, $urlRouterProvider, $compileProvider, $httpProvider){
+  delete $httpProvider.defaults.headers.common["X-Requested-With"];
   $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data|chrome-extension):/);
 
   $urlRouterProvider.otherwise('/');
@@ -168,12 +169,10 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
     var settings = {
       "async": true,
       "crossDomain": true,
-      "url": "http://learningofthefuture.net/contact-form.php",
-      "method": "GET",
+      "url": "http://localhost:8080/getContact",
+      "method": "POST",
       "headers": {
-        "content-type": "application/x-www-form-urlencoded",
-        "cache-control": "no-cache",
-        "postman-token": "624f5723-eea0-12d9-c634-8eb2da8b4582"
+        "content-type": "application/json"
       },
       "data": {
         "name": $scope.name,
@@ -183,8 +182,8 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
       }
     };
 
-    $http(settings).success(function(data){
-      console.log("data: ", data);
+    $http(settings).success(function(response){
+      console.log("response: ", response);
     });
 
   };
