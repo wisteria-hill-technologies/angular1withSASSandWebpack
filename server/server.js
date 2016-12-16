@@ -31,7 +31,7 @@ app.post('/getContact', function (req, res, next) {
     "headers": {
       "content-type": "application/x-www-form-urlencoded"
       },
-    body: "name="+name+"&email="+email+"&subject"+subject+"&message="+message
+    body: "name="+name+"&email="+email+"&subject="+subject+"&message="+message
 
   }, function(error, response, body){
       if(error) {

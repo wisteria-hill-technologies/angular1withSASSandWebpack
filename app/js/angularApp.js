@@ -166,6 +166,19 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
 
   $scope.submit = function(formData){
     // mailer.send_emailFrom($scope.name, $scope.email, $scope.subject, $scope.message);
+    if(typeof $scope.name ==="undefined") {
+      $scope.name = "";
+    }
+    if(typeof $scope.email ==="undefined") {
+      $scope.email = "";
+    }
+    if(typeof $scope.subject ==="undefined") {
+      $scope.subject = "";
+    }
+    if(typeof $scope.message ==="undefined") {
+      $scope.message = "";
+    }
+
     var settings = {
       "async": true,
       "crossDomain": true,
@@ -182,8 +195,14 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
       }
     };
 
+
     $http(settings).success(function(response){
       console.log("response: ", response);
+      $scope.response=response;
+      // $scope.name = "";
+      // $scope.email = "";
+      // $scope.subject = "";
+      // $scope.message = "";
     });
 
   };
