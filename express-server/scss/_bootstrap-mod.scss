@@ -1,0 +1,13 @@
+//variables
+$mainColor: rgb(32, 31, 31);
+
+.jumbotron {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.thumbnail {
+  min-height:100px;
+}
+a {
+  color: $mainColor;
+}

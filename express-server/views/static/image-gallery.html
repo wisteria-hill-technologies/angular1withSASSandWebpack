@@ -1,0 +1,11 @@
+<ng-include src="'app/static/jumbotron.html'"></ng-include>
+
+<div class="row" ng-cloak>
+  <div ng-repeat="imgItem in imgList" class="col-lg-4 col-sm-6">
+    <div class="thumbnail">
+      <img ng-src="{{ imgItem.img }}" alt="" class="fadeIn">
+      <p class="fadeIn text-center">{{ imgItem.imgDesc }}</p>
+    </div>
+  </div>
+
+</div>

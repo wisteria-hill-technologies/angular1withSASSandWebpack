@@ -1,0 +1,108 @@
+.jumbotron {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.thumbnail {
+  min-height: 100px; }
+
+a {
+  color: #201f1f; }
+
+html {
+  height: 100%; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #201f1f; }
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 10px;
+    padding-bottom: 70px; }
+  .navbar-fixed-top {
+    bottom: 0;
+    top: initial;
+    margin-bottom: 0;
+    border-width: 1px 0 0; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    padding-top: 70px; } }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  body {
+    padding-top: 70px; } }
+
+@media (min-width: 1200px) {
+  body {
+    padding-top: 70px; } }
+
+.landingContent, .jumbotron-home, .jumbotron-grass, .jumbotron-walk, .jumbotron-contact, .jumbotron-walk2 {
+  text-align: center; }
+  .landingContent h1, .jumbotron-home h1, .jumbotron-grass h1, .jumbotron-walk h1, .jumbotron-contact h1, .jumbotron-walk2 h1, .landingContent h2, .jumbotron-home h2, .jumbotron-grass h2, .jumbotron-walk h2, .jumbotron-contact h2, .jumbotron-walk2 h2, .landingContent h3, .jumbotron-home h3, .jumbotron-grass h3, .jumbotron-walk h3, .jumbotron-contact h3, .jumbotron-walk2 h3, .landingContent p, .jumbotron-home p, .jumbotron-grass p, .jumbotron-walk p, .jumbotron-contact p, .jumbotron-walk2 p {
+    text-shadow: 0px 0px 10px black, 0px 0px 250px #4CAF50;
+    color: white; }
+
+.landingBackground, .jumbotron-home, .jumbotron-grass, .jumbotron-walk, .jumbotron-contact, .jumbotron-walk2 {
+  background-position: center;
+  background-size: cover; }
+
+.landingContent {
+  padding-top: 20%; }
+  .landingContent hr {
+    width: 800px;
+    border-top: 1px solid #b0ecc9;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+
+.landingBackground {
+  background-image: url("../images/walk2.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat; }
+  .landingBackground h1 {
+    color: white; }
+
+.jumbotron-home {
+  background-image: url("../images/light.jpg"); }
+
+.jumbotron-grass {
+  background-image: url("../images/grass.jpg"); }
+
+.jumbotron-walk {
+  background-image: url("../images/walk.jpg"); }
+
+.jumbotron-contact {
+  background-image: url("../images/contact.jpg"); }
+
+.jumbotron-walk2 {
+  background-image: url("../images/walk2.jpg"); }
+
+.sideBar {
+  margin-bottom: 20px; }
+
+.sideBarItem {
+  height: 30px;
+  width: 115px;
+  background-color: rgba(184, 226, 226, 0.58);
+  margin: 1px 10px 5px 10px;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 5px; }
+  .sideBarItem:link {
+    text-decoration: none; }
+  .sideBarItem:hover {
+    background-color: yellow; }
+  .sideBarItem:focus {
+    background-color: rgba(136, 246, 8, 0.73); }
+
+.active {
+  background: rgba(136, 246, 8, 0.73); }
+
+.fadeIn {
+  animation: fadeIn 0.3s both ease-in;
+  z-index: 8888; }
+
+/* animations --------------------------------------- */
+/* fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0; } }
