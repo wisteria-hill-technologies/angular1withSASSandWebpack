@@ -26,20 +26,7 @@ module.exports = {
             test: /\.html$/,
             loader: 'raw'
         },
-        {
-            test: /\.scss$/,
-            exclude: /node_modules/,
-            loaders: [
-                'style',
-                // 'style-loader',
-                // 'css-loader',
-                // 'resolve-url-loader',
-                // 'sass-loader',
-                'css',
-                'autoprefixer?browsers=last 3 versions',
-                'sass?outputStyle=expanded'
-            ]
-        },
+        {test: /\.(scss|sass)$/, loader: 'style-loader!css-loader?sourceMap!autoprefixer-loader!postcss-loader!sass-loader?sourceMap'},
         {
             test: /\.(woff2?|ttf|eot|svg)$/,
             loader: 'url?limit=10000'
