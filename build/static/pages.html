@@ -1,8 +1,8 @@
-<ng-include src="'app/static/jumbotron.html'"></ng-include>
+<ng-include src="'./static/jumbotron.html'"></ng-include>
 
 <div class="row">
   <div class="col-md-2 col-sm-12 sideBar">
-    <a id="{{link.itemUrl}}" ng-repeat="link in page.pageSections" href="#{{ page.pageUrl }}/{{link.itemUrl}}" class="sideBarItem" ng-class="{'active':link.itemUrl === section.itemUrl}"> {{ link.itemTitle }}</a>
+    <a id="{{link.itemUrl}}" ng-repeat="link in page.pageSections" href="{{ page.pageUrl }}/{{link.itemUrl}}" class="sideBarItem" ng-class="{'active':link.itemUrl === section.itemUrl}"> {{ link.itemTitle }}</a>
 
   </div>
   <div class="col-md-10 col-sm-12">
