@@ -1,9 +1,9 @@
-# Angular 1 Website with SASS
+# Angular 1 Website with SASS and Webpack
 
 Used Technologies:
 ```
 Angular 1,
 SASS (SCSS),
 Bootstrap,
-webpack instead of gulp
+Webpack (I replaced Gulp with Webpack.)
 ```
