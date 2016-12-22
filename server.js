@@ -49,8 +49,9 @@ app.post('/postContact', function (req, res, next) {
     from: myContactEmail, // sender address
     to: myEmail, // list of receivers
     subject: subject, // Subject line
-    text: message //, // plaintext body
-    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
+    html: '<p>From: '+name+'</p>'+
+          '<p>Subject: '+subject+'</p>'+
+          '<p>Message: <br/>'+message+'</p>'
   };
 
   transporter.sendMail(mailOptions, function(error, info){
