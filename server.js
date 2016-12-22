@@ -6,8 +6,9 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 require('dotenv').config();
-var password = process.env.password;
+var myPassword = process.env.myPassword;
 var myEmail = process.env.myEmail;
+var myContactEmail = process.env.myContactEmail;
 
 var PORT = process.env.PORT || 3000;
 
@@ -27,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/*', function(req, res, next){
   res.sendFile(path.join(__dirname, 'build/index.html'));
-  console.log("password is ", password);
 });
 
 app.post('/postContact', function (req, res, next) {
@@ -41,13 +41,13 @@ app.post('/postContact', function (req, res, next) {
           service: 'Gmail',
           auth: {
               user: myEmail, // Your email id
-              pass: password // Your password
+              pass: myPassword // Your password
           }
   });
 
   var mailOptions = {
-    from: name, // sender address
-    to: 'contact@abacusmaths.info', // list of receivers
+    from: myContactEmail, // sender address
+    to: myEmail, // list of receivers
     subject: subject, // Subject line
     text: message //, // plaintext body
     // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
@@ -62,11 +62,6 @@ app.post('/postContact', function (req, res, next) {
           res.json({yo: info.response});
       }
   });
-
-  console.log("req.body.name: ", name);
-  console.log("req.body.email: ", email);
-  console.log("req.body.subject: ", subject);
-  console.log("req.body.message: ", message);
 
   // request({
   //   "url": "http://learningofthefuture.net/contact-form.php",
