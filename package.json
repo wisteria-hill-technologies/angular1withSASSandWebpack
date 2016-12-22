@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Website with Angular1 and sass",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors"
+    "start": "NODE_PATH=$NODE_PATH:./src node server",
+    "dev": "npm start & webpack-dev-server --progress --colors",
+    "build": "webpack --progress --colors --config webpack.prod.config.js"
   },
   "author": "Noby Fujioka",
   "license": "ISC",

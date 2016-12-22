@@ -17,11 +17,21 @@ app.config(function($stateProvider, $urlRouterProvider, $compileProvider, $httpP
       controller: 'landingCtrl as landCtrl'
     })
     .state('home', {
+      url:'/home',
+      templateUrl: 'static/pages.html',
+      controller: 'pageCtrl as pCtrl'
+    })
+    .state('homeSections', {
       url:'/home/:itemUrl',
       templateUrl: 'static/pages.html',
       controller: 'pageCtrl as pCtrl'
     })
     .state('about', {
+      url:'/about',
+      templateUrl: 'static/pages.html',
+      controller: 'pageCtrl as pCtrl'
+    })
+    .state('aboutSections', {
       url:'/about/:itemUrl',
       templateUrl: 'static/pages.html',
       controller: 'pageCtrl as pCtrl'
@@ -80,7 +90,7 @@ app.factory('pages', function(){
      pageJumbotron: "contact",
      pageTitle: "Contact us",
      pageStrapline: "",
-     pageParagraph: "biomimicry Al Gore rebound effect Our Common Future less aesthetics more ethics FSC anthropocene SIGMA Guidelines land-grabbing CSR activism LOVOS artisan WRAP biodiversity C2C bicycle Is Beautiful coral reef slow baking zero waste freegan long-term fair solidarity re-examine Gross Domestic Happiness footprint taste-the-waste foodcoops transparency scenarios ecosystem services liftclub time.",
+     pageParagraph: "biomimicry Al Gore rebound effect Our Common Future less aesthetics more ethics FSC anthropocene SIGMA Guidelines land-grabbing CSR activism LOVOS artisan WRAP biodiversity C2C bicycle Is Beautiful coral reef slow baking zero waste freegan long-term fair solidarity re-examine Gross Domestic Happiness footprint taste-the-waste foodcoops transparency scenarios ecosystem services liftclub time..",
      pageSections:[]
    },
    {pageUrl:"image-gallery",
@@ -105,18 +115,21 @@ app.factory('pages', function(){
       return page.pageUrl == pageEntered;
     }
     var page = o.list.filter(findByStateName);
-    console.log("pageEntered: ", pageEntered);
-    console.log("page: ", page[0]);
+    // console.log("pageEntered: ", pageEntered);
+    // console.log("page: ", page[0]);
     return page[0];
   };
 
   o.getSection = function(pageEntered, sectionEntered){
+    if(!sectionEntered){
+      sectionEntered = "";
+    }
     function findByStateParam(section){
       return section.itemUrl == sectionEntered;
     }
     var page = o.getPage(pageEntered);
     var section = page.pageSections.filter(findByStateParam);
-    console.log();
+
     return section[0];
   };
 
@@ -132,18 +145,17 @@ app.controller('landingCtrl', function($scope){
   $scope.parent.addClass = "landingBackground";
 });
 
-app.controller('pageCtrl', ['$scope', '$state', '$stateParams', 'pages', function($scope, $state, $stateParams, pages){
-  $scope.parent.addClass = "";
-  $scope.page = pages.getPage($state.current.name);
-  $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
-}]);
+app.controller('pageCtrl', ['$scope', '$state', '$stateParams', 'pages', '$location', function($scope, $state, $stateParams, pages, $location){
 
-// app.controller('aboutCtrl', ['$scope', '$state', '$stateParams','pages', function($scope, $state, $stateParams, pages){
-//   var self = this;
-//   $scope.parent.addClass = "";
-//   $scope.page = pages.getPage($state.current.name);
-//   $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
-// }]);
+  // console.log("$location.$$url:", $location.$$url);
+  // console.log("stateParams.itemUrl:", $stateParams.itemUrl);
+
+  $scope.parent.addClass = "";
+  $scope.page = pages.getPage($location.$$url.split('/')[1]);
+
+  $scope.section = pages.getSection($location.$$url.split('/')[1], $stateParams.itemUrl);
+
+}]);
 
 app.controller('imageGalleryCtrl', ['$scope', '$state', '$stateParams', 'pages', function($scope, $state, $stateParams, pages){
   $scope.parent.addClass = "";
@@ -201,7 +213,7 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
     };
 
     $http(settings).success(function(response){
-      console.log("response: ", response);
+      // console.log("response: ", response);
       $scope.response=response;
       $scope.name = "";
       $scope.email = "";

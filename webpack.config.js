@@ -1,11 +1,15 @@
 var webpack = require('webpack');
+var path = require('path');
 module.exports = {
+    devtool: 'inline-source-map',
     entry: [
+      'webpack-dev-server/client?http://127.0.0.1:8080/',
+      'webpack/hot/only-dev-server',
       "bootstrap-loader",
       "./src"
     ],
     output: {
-        path: "./build",
+        path: path.join(__dirname, "build"),
         filename: 'bundle.js'
     },
     resolve: {
@@ -23,10 +27,6 @@ module.exports = {
             }
         },
         {
-            test: /\.html$/,
-            loader: 'raw'
-        },
-        {
             test: /\.scss$/,
             exclude: /node_modules/,
             loaders: [
@@ -35,6 +35,10 @@ module.exports = {
                 'autoprefixer?browsers=last 3 versions',
                 'sass?outputStyle=expanded'
             ]
+        },
+        {
+            test: /\.html$/,
+            loader: 'raw'
         },
         {
           test: /\.(png|jpg|svg)$/,
@@ -54,9 +58,10 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ],
-    devServer : {
-      port: 3000,
-      contentBase: './build',
-      inline: true
+    devServer: {
+            hot: true,
+            proxy: {
+                '*': 'http://localhost:3000'
+            }
     }
 };
