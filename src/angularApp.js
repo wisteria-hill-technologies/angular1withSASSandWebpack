@@ -181,7 +181,7 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
   $scope.page = pages.getPage($state.current.name);
   $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
 
-  $scope.submit = function(formData){
+  $scope.submit = function(){
     // mailer.send_emailFrom($scope.name, $scope.email, $scope.subject, $scope.message);
     if(!$scope.name || $scope.name ==='') {
       return;
@@ -199,7 +199,7 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
     var settings = {
       "async": true,
       "crossDomain": true,
-      "url": "http://localhost:8080/getContact",
+      "url": "http://localhost:3000/getContact",
       "method": "POST",
       "headers": {
         "content-type": "application/json"
@@ -212,9 +212,9 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
       }
     };
 
-    $http(settings).success(function(response){
-      // console.log("response: ", response);
-      $scope.response=response;
+    $http(settings).then(function(response){
+      console.log("response: ", response.data);
+      $scope.response=response.data;
       $scope.name = "";
       $scope.email = "";
       $scope.subject = "";
