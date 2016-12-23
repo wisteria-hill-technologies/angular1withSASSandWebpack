@@ -182,19 +182,19 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
   $scope.section = pages.getSection($state.current.name, $stateParams.itemUrl);
 
   $scope.submit = function(){
-    // mailer.send_emailFrom($scope.name, $scope.email, $scope.subject, $scope.message);
-    if(!$scope.name || $scope.name ==='') {
-      return;
-    }
-    if(!$scope.email || $scope.email ==='') {
-      return;
-    }
-    if(!$scope.subject || $scope.subject ==='') {
-      return;
-    }
-    if(!$scope.message || $scope.message ==='') {
-      return;
-    }
+
+    // if(!$scope.name || $scope.name ==='') {
+    //   return;
+    // }
+    // if(!$scope.email || $scope.email ==='') {
+    //   return;
+    // }
+    // if(!$scope.subject || $scope.subject ==='') {
+    //   return;
+    // }
+    // if(!$scope.message || $scope.message ==='') {
+    //   return;
+    // }
 
     var settings = {
       "async": true,

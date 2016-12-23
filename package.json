@@ -4,7 +4,7 @@
   "description": "Website with Angular1 and sass",
   "scripts": {
     "start": "NODE_PATH=$NODE_PATH:./src node server",
-    "dev": "npm start & webpack-dev-server --progress --colors",
+    "dev": "NODE_PATH=$NODE_PATH:./src nodemon server & webpack-dev-server --progress --colors",
     "build": "webpack --progress --colors --config webpack.prod.config.js"
   },
   "author": "Noby Fujioka",
@@ -17,6 +17,8 @@
     "bootstrap-sass": "^3.3.7",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "express-validator": "^3.1.1",
     "http-proxy": "^1.16.2",
     "jquery": "^3.1.1",
     "kerberos": "0.0.22",
@@ -36,6 +38,7 @@
     "imports-loader": "^0.7.0",
     "kerberos": "0.0.22",
     "node-sass": "^4.0.0",
+    "nodemon": "^1.11.0",
     "raw-loader": "^0.5.1",
     "resolve-url-loader": "^1.6.1",
     "sass-loader": "^4.1.0",
