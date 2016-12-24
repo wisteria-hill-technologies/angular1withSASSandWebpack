@@ -30,8 +30,8 @@
           <div class="form-group">
             <button type="submit" class="btn btn-default" ng-disabled="contactForm.$invalid">Send</button>
           </div>
-          <div class="alert">
-            <ul>
+          <div class="alert alert-{{ alert }}">
+            <ul class="list-unstyled">
               <li ng-repeat="item in response">{{ item.msg }}</li>
             </ul>
           </div>

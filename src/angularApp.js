@@ -213,14 +213,16 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
     };
 
     $http(settings).then(function(response){
-      console.log("response.data.result: ", response.data.result);
       if(response.data.success){
         $scope.name = "";
         $scope.email = "";
         $scope.subject = "";
         $scope.message = "";
+        $scope.alert = "success";
+      } else {
+        $scope.alert = "danger";
       }
-      $scope.response=response.data.result;        
+      $scope.response=response.data.result;
 
     });
 
