@@ -68,7 +68,7 @@ app.post('/postContact', function (req, res, next) {
   console.log("errors: ", errors);
 
   if(errors) {
-    res.json({yo: errors });
+    res.json({result: errors, success: false });
   } else {
     var transporter = nodemailer.createTransport({
             service: 'Gmail',
@@ -90,10 +90,10 @@ app.post('/postContact', function (req, res, next) {
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
             console.log(error);
-            res.json({yo: 'error'});
+            res.json({result: [{msg:'There was an error sending your message.  Please try again later.'}], success: false });
         }else{
             console.log('Message sent: ' + info.response);
-            res.json({yo: info.response});
+            res.json({result: [{msg:'Your message was sent successfully!'}], success: true});
         }
     });
 
