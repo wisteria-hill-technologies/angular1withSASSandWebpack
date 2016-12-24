@@ -5,7 +5,6 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
-var expressSession = require('express-session');
 
 require('dotenv').config();
 var myPassword = process.env.myPassword;
