@@ -2,9 +2,6 @@ var express = require('express');
 var request = require('request');
 var nodemailer = require('nodemailer');
 var app = express();
-
-app.set('port', (process.env.PORT || 3000));
-
 var path = require('path');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
@@ -14,7 +11,7 @@ var myPassword = process.env.myPassword;
 var myEmail = process.env.myEmail;
 var myContactEmail = process.env.myContactEmail;
 
-
+app.set('port', (process.env.PORT || 3000));
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
