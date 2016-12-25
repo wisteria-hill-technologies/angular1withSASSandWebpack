@@ -5,10 +5,10 @@
   "engines": {
     "node": "6.9.2"
   },
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "NODE_PATH=$NODE_PATH:./src node server",
-    "dev": "NODE_PATH=$NODE_PATH:./src nodemon server & webpack-dev-server --progress --colors",
+    "start": "NODE_PATH=$NODE_PATH:./src node index",
+    "dev": "NODE_PATH=$NODE_PATH:./src nodemon index & webpack-dev-server --progress --colors",
     "build": "webpack --progress --colors --config webpack.prod.config.js"
   },
   "author": "Noby Fujioka",
