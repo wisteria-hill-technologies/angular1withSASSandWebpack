@@ -12,7 +12,6 @@ var myEmail = process.env.myEmail;
 var myContactEmail = process.env.myContactEmail;
 
 var PORT = process.env.PORT || 3000;
-console.log(PORT);
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
