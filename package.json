@@ -2,6 +2,10 @@
   "name": "angular1website",
   "version": "1.0.0",
   "description": "Website with Angular1 and sass",
+  "engines": {
+    "node": "6.9.2"
+  },
+  "main": "server.js",
   "scripts": {
     "start": "NODE_PATH=$NODE_PATH:./src node server",
     "dev": "NODE_PATH=$NODE_PATH:./src nodemon server & webpack-dev-server --progress --colors",
@@ -46,8 +50,5 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
-  },
-  "engines": {
-    "node": "6.9.2"
   }
 }

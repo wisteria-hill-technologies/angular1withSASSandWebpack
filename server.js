@@ -11,7 +11,7 @@ var myPassword = process.env.myPassword;
 var myEmail = process.env.myEmail;
 var myContactEmail = process.env.myContactEmail;
 
-var PORT = process.env.PORT || 3000;
+app.set('port', (process.env.PORT || 3000));
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
@@ -117,6 +117,9 @@ app.post('/postContact', function (req, res, next) {
   // });
 });
 
-app.listen(PORT, function(){
-  console.log("Server is running on: ", PORT);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
+// app.listen(PORT, function(){
+//   console.log("Server is running on: ", PORT);
+// });
