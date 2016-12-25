@@ -26,10 +26,10 @@ app.use(function(req, res, next) {
 
 
 // Used for production build
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/*', function(req, res, next){
-  res.sendFile(path.join(__dirname, 'build/index.html'));
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 app.post('/postContact', function (req, res, next) {
