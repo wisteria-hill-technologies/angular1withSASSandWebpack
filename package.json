@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "NODE_PATH=$NODE_PATH:./src node index",
+    "start": "node index.js",
     "dev": "NODE_PATH=$NODE_PATH:./src nodemon index & webpack-dev-server --progress --colors",
     "build": "webpack --progress --colors --config webpack.prod.config.js"
   },
@@ -20,6 +20,7 @@
     "body-parser": "^1.15.2",
     "bootstrap-sass": "^3.3.7",
     "dotenv": "^2.0.0",
+    "ejs": "^2.5.5",
     "express": "^4.14.0",
     "express-session": "^1.14.2",
     "express-validator": "^3.1.1",

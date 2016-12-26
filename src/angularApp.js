@@ -199,7 +199,7 @@ app.controller('contactCtrl', ['$scope', '$state', '$stateParams', 'pages', '$ht
     var settings = {
       "async": true,
       "crossDomain": true,
-      "url": "http://localhost:3000/postContact",
+      "url": "/postContact",
       "method": "POST",
       "headers": {
         "content-type": "application/json"
