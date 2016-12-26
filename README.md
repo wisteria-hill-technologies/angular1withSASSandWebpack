@@ -1,39 +1,31 @@
-# node-js-getting-started
+# Angular1, Expressjs, SASS, Bootstrap with Webpack and Heroku setup
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
-## Running Locally
+This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article.
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
-```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+## Running server for development
+```npm run dev```
+
+- hot reloading for front end, back end, and sass
+* Note: Pages do not reload when html pages are modified.  Please reload manually.
+
+## Build the production code
+```npm run build```
+
+## Run production
+```npm start```
 
 ## Deploying to Heroku
 
 ```
-$ heroku create
+$ heroku create <app name>
 $ git push heroku master
 $ heroku open
 ```
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+Important:<br>
+To make the mailer in the contact form to work from your local environment, you will need to set .env file.
+In .env file, specify your email address, password,etc.
+For Heroku, you will also need to set them in Heroku website.
